@@ -58,10 +58,10 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         textAlign: "left",
-        padding: theme.spacing.unit * 3
+        padding: theme.spacing(3)
     },
     divider: {
-        margin: `${theme.spacing.unit * 3}px 0`
+        margin: `${theme.spacing(3)}px 0`
     },
     heading: {
         fontWeight: "bold"
@@ -101,9 +101,7 @@ function Item(props) {
     useEffect(() => {
         if (inView) {
             controls.start("visible")
-        }
-          
-        console.log()      
+        }     
     }, [controls, inView])
 
     return (
