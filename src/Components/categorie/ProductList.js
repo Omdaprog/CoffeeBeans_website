@@ -6,6 +6,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom'
+
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -201,7 +203,7 @@ function ProductList() {
                         container>
                         {items.map((item, id) =>
                             <Grid item>
-                                <Item key={id} item={item} />
+                                <Link style={{textDecoration:"none"}} to="/product"><Item key={id} item={item} /></Link>
                             </Grid>
                         )}
                     </Grid>

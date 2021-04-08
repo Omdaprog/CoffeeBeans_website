@@ -19,9 +19,10 @@ import Hidden from '@material-ui/core/Hidden';
 import Box from '@material-ui/core/Box';
 import logo from "./images/cofique_logo.svg"
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
-
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
+    
     list: {
         width: 250,
     },
@@ -42,7 +43,13 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 0.05,
     },
     navbarPadding: {
+        backdropFilter: "blur(8px)",
+        backgroundColor: "#ffffff69",
         position: "relative",
+        paddingLeft: 220 , 
+        paddingRight: 220 ,
+        paddingTop:16, 
+        paddingBottom: 10, 
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 10 , 
             paddingRight: 10 ,
@@ -59,10 +66,7 @@ const useStyles = makeStyles((theme) => ({
             paddingTop:16,
             paddingBottom: 10, 
         },
-        paddingLeft: 220 , 
-        paddingRight: 220 ,
-        paddingTop:16, 
-        paddingBottom: 10, 
+        
     },
     navbarButton: {
         fontSize: 20,   
@@ -74,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
             boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
             opacity: 0.6,
             
-        }
+        },
+        textDecoration:"none",
     },
     NavLogo: {
         backgroundImage:`url("${logo}")`,
@@ -179,12 +184,12 @@ export default function MenuDrawer({ open }) {
                     <Hidden smDown>
                         <Typography  className={classes.next_to_title}>
 
-                            <Button  className={classes.navbarButton} size="large" variant="text">HOME</Button>
+                        <Link to="/" style={{textDecoration:"none"}}><Button  className={classes.navbarButton} size="large" variant="text">HOME</Button></Link> 
                         </Typography>
                     </Hidden>
                     <Hidden smDown>
                         <Typography  variant="h6" className={classes.next_to_title}>
-                            <Button className={classes.navbarButton} size="large" variant="text">SHOP</Button>
+                            <Link to="/categorie" style={{textDecoration:"none"}}><Button className={classes.navbarButton} size="large" variant="text">SHOP</Button></Link> 
                         </Typography>
                     </Hidden>
                     <Typography variant="h6" className={classes.title}>
