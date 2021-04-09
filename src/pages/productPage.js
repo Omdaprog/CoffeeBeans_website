@@ -33,13 +33,16 @@ function ProductPage() {
     return (
         <div style={{marginTop:"10%"}}>
             <Grid container justify="center" spacing={5}>
-                <Grid item sm={1}>
-                    <ImageGrid images={ProductImages} />
+                <Grid item sm={1} xs={11}>
+                    <ImageGrid 
+                        images={ProductImages} 
+                        onSelect={setSelectImage} 
+                        selectedImage={selectImage} />
                 </Grid>
-                <Grid item sm={5}>
+                <Grid item sm={4} xs={11}>
                     <MainImage src={ProductImages[selectImage]} />
                 </Grid>
-                <Grid item sm={5}>
+                <Grid item sm={4} xs={11}>
                     <ProductInfo {...Info}/>
                 </Grid>
             </Grid>

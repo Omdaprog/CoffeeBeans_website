@@ -1,20 +1,20 @@
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-    image : {
-        height: 75,
-        border: "solid #eee gray", cursor: "pointer",
-    }
-}))
 
 
-function ImageGrid({images}) {
-    const classes = useStyles()
+function ImageGrid({images, onSelect, selectedImage}) {  
     return (
         <Grid container direction="column">
-            {images.map(image => (
-                <img className={classes.image} src={image} alt=""/>
+            {images.map((image,index) => (
+                <img 
+                    onClick={() => onSelect(index)} 
+                    src={image}
+                    style={{
+                        height:75,
+                        border: index === selectedImage ? "solid 2px black" : "none",
+                        justifyContent: "space-between",
+                        marginBottom: 5,
+                        cursor: "pointer"}} 
+                    alt=""/>
             ))}
         </Grid>
     )
