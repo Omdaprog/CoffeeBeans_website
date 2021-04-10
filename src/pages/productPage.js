@@ -31,16 +31,15 @@ function ProductPage() {
     const [selectImage, setSelectImage] = useState(0)
 
     return (
-        <div style={{marginTop:"10%"}}>
+        <div style={{marginTop:"10%" ,padding: 20,backgroundColor: "rgb(241, 234, 242)"}}>
             <Grid container justify="center" spacing={5}>
-                <Grid item sm={1} xs={11}>
+                
+                <Grid item sm={5} xs={11}>
+                    <MainImage src={ProductImages[selectImage]} />
                     <ImageGrid 
                         images={ProductImages} 
                         onSelect={setSelectImage} 
                         selectedImage={selectImage} />
-                </Grid>
-                <Grid item sm={4} xs={11}>
-                    <MainImage src={ProductImages[selectImage]} />
                 </Grid>
                 <Grid item sm={4} xs={11}>
                     <ProductInfo {...Info}/>

@@ -3,16 +3,19 @@ import Grid from '@material-ui/core/Grid';
 
 function ImageGrid({images, onSelect, selectedImage}) {  
     return (
-        <Grid container direction="column">
+        <Grid style={{backgroundColor: "rgb(241, 234, 242)"}} container justify="space-around"  direction="row">
             {images.map((image,index) => (
-                <img 
+                <div 
                     onClick={() => onSelect(index)} 
-                    src={image}
                     style={{
-                        height:75,
+                        width:"18%",
+                        paddingTop: "30%",
+                        backgroundImage: `url('${image}')`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "contain",
+                        backgroundPosition: "center",
                         border: index === selectedImage ? "solid 2px black" : "none",
                         justifyContent: "space-between",
-                        marginBottom: 5,
                         cursor: "pointer"}} 
                     alt=""/>
             ))}
